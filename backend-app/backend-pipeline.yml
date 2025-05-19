@@ -1,12 +1,12 @@
 trigger:
-  - main  # أو الفرع الذي تستخدمينه
+  - main  
 
 pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  dockerHubServiceConnection: 'docker-hub-connection'  # ← غيّريه حسب اسم Docker service connection
-  dockerImageName: 'devops1renad/auth_app_backend_image'  # ← غيّريه حسب اسم Docker image الخاص بك
+  dockerHubServiceConnection: 'docker-hub-connection'  
+  dockerImageName: 'devops1renad/auth_app_backend_image' 
 
 stages:
 - stage: Build_and_Deploy_Backend
@@ -28,7 +28,7 @@ stages:
     - task: AzureCLI@2
       displayName: 'Get AKS credentials'
       inputs:
-        azureSubscription: 'AzureRMServiceConnection'  # ← اسم Azure service connection
+        azureSubscription: 'AzureRMServiceConnection'  # ←  Azure service connection
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
         inlineScript: |
